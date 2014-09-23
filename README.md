@@ -108,4 +108,4 @@ I've tried using the bower version of jquery too, substituting this for the npm 
     gulp.task('default', ['browserify'])
 
 
-Note that I'm able to `require('maskedinput')` in my client-side js, but when I try to `require('nouislider')`, I see a console error that seems to say NoUISlider is not finding its jQuery dependency: "Uncaught TypeError: Cannot read property 'fn' of undefined" when trying to initialize the NoUISlider.  I've put together a sandbox repo if you'd like to try it for yourself: [gulp-browserify-bower-test]()
+Note that I'm able to `require('maskedinput')` in my client-side js, but when I try to `require('nouislider')`, I see a console error that seems to say NoUISlider is not finding its jQuery dependency: "Uncaught TypeError: Cannot read property 'fn' of undefined" when trying to initialize the NoUISlider.  I've put together a sandbox repo if you'd like to try it for yourself: [gulp-browserify-bower-test](https://github.com/krry/gulp-browersify-bower-test)

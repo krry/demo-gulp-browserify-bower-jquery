@@ -1,14 +1,17 @@
 var $ = require('jquery')
-var nouislider = require('nouislider')
-var maskedinput = require('maskedinput')
 
-function initSlider() {
-  return $('div#slider').noUISlider()
-}
+var maskedinput = require('maskedinput')
 
 function maskInputs() {
   return $('input#zip').mask('99999')
 }
+maskInputs()
+
+var nouislider = require('nouislider')
+
+function initSlider() {
+  $('small').hide()
+  return $('div#slider').noUISlider()
+}
 
 initSlider()
-maskInputs()
