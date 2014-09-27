@@ -1,4 +1,4 @@
-Before anything else, run these to get things compiled:
+Before anything else, clone the repo, then run these to get things compiled:
 ```
 npm install
 bower install
