@@ -1,4 +1,5 @@
 var $ = require('jquery')
+var jQuery = $;
 
 var maskedinput = require('maskedinput')
 

@@ -1,3 +1,9 @@
+Before anything else, run these to get things compiled:
+```
+npm install
+bower install
+```
+
 I'm working on a rather full-featured auto-recompiling and auto-reloading build system (Gulp+Browserify+BrowserSync+Nodemon), but trying to get a jQuery plugin shimmed into the DOM has me stumped.  There's several moving pieces, so please bear with me.  The issue I'm trying to resolve is how to properly shim or require jQuery so that dependencies are met without unneeded bloat.  Here are the relevant files and their relevant contents:
 
 ### 1. The pre-browserified client-side script `bundle.js` that seeks to initialize the slider:
