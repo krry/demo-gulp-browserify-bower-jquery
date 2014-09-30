@@ -3,7 +3,7 @@ var maskedinput = require('maskedinput')
 
 function maskInputs() {
   return $('input#zip').mask('(999) 999-9999', {
-    placeholder: ' '
+    placeholder: '_'
   })
 }
 maskInputs()

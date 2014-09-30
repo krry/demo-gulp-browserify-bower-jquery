@@ -117,10 +117,30 @@ a:hover {
     border-bottom: 1px solid;
 }
 
-::placeholder,
-input::placeholder {
-    color: white;
-    opacity: 0.5;
+::-webkit-input-placeholder {
+  opacity: .7;
+  color: inherit;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+::-moz-placeholder {
+  opacity: .7;
+  color: inherit;
+  transition: opacity .2s;
+}
+
+:-ms-input-placeholder {
+  opacity: .7;
+  color: inherit;
+  transition: opacity .2s;
+}
+
+::placeholder {
+  opacity: .7;
+  color: inherit;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
 }
 
 .affirmative {
@@ -144,7 +164,7 @@ input::placeholder {
     height: 54px;
     width: 88px;
     line-height: 48px;
-    box-shadow: 0 0 12px 6px yellow;
+    box-shadow: 0 0 12px 4px yellow;
     left: -44px;
 }
 
