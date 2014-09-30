@@ -2,36 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Demo • Gulp-Browserify-Bower-jQuery</title>
+    <title>Can Gulp Browserify Shim Bower jQuery Plugins?</title>
     <link rel="stylesheet" href="dist/all.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Can browserify gulp bowered jquery plugins?</h1>
-            <h2 id="affirmative" class="results">Let's find out</h2>
+            <h1>Can Gulp Browserify Shim Bower jQuery Plugins?<span id="affirmative" class="results"></span></h1>
         </div>
     </header>
     <main>
         <div class="container">
-            <div class="tray">
-                <label for="nouislider">This range slider was brought to you by <a href="http://refreshless.com/nouislider/">noUiSlider</a></label>
+            <div id="slider-tray" class="tray">
+                <!-- TODO: explore whether CSS pseudo-classes can create/use indices for nested elements of otherwise ordered lists -->
+                <div class="corner">1</div>
                 <div id="nouislider"></div>
                 <small>nuffem</small>
-                <output>0% slid</output>
+                <output>
+                    <span class="left">Get</span>
+                    <span class="right">slidded</span>
+                </output>
+                <label for="nouislider">This slider was brought to you by <a href="http://refreshless.com/nouislider/">noUiSlider</a> via jQuery.<br>Bearface because brown.</label>
             </div>
-            <div class="tray">
-                <label for="zip">And thanks to <a href="http://digitalbush.com/projects/masked-input-plugin/">maskedinput</a> you don't have to phormat your (US) phone number
-                    <input type="tel" id="zip" placeholder="I can has yo numba?">
+            <div id="mask-tray" class="tray none">
+                <div class="corner">2</div>
+                <label for="zip">And thanks to <a href="http://digitalbush.com/projects/masked-input-plugin/">maskedinput</a>, you don't have to phormat
+                    <input type="tel" id="dob" placeholder="I can has yr dob?">
+                    <input type="tel" id="tel" class="none" placeholder="I can has yr tel?">
                 </label>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="container">
-            <h3>This took a lot of tinkering</h3>
-            <p>If you'd like to get shimmy with Gulp, Browserify, Bower, and<br> some jQuery plugins, <a href="http://github.com/krry/demo-gulp-browserify-bower-jquery">check out this page's repo</a>.</p>
-            <p>Made possible by <a href="https://stackoverflow.com/questions/25985916/how-can-i-initialize-a-jquery-plugin-nouislider-included-via-browserify-shim">help from StackOverflow</a></p>
+    <footer class="none">
+        <div class="container narrow">
+            <h3>Nice demo of squat. Where's the nectar?</h3>
+            <p>If you're looking to shim jQuery plugins into a luxurious Pooh-niversal build (like this) using Gulp, Browserify, Bower, <a href="http://github.com/krry/demo-gulp-browserify-bower-jquery">check out this demo's repo</a>.</p>
+            <p>Enabled by <a href="https://stackoverflow.com/questions/25985916/how-can-i-initialize-a-jquery-plugin-nouislider-included-via-browserify-shim">help from StackOverflow</a></p>
+            <p class="tiny">Made with ⊙﹏⊙ by <a class="scary-hover" href="//krry.me">⊙﹏⊙</a></p>
         </div>
     </footer>
     <script src="dist/all.js"></script>
