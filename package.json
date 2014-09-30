@@ -1,11 +1,14 @@
 {
-  "name": "gulp-test",
+  "name": "demo-gulp-browserify-bower-jquery",
   "version": "0.1.0",
   "repository": {
     "type": "git"
   },
   "engines": {
     "node": "0.11.x"
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
   },
   "browser": {
     "maskedinput": "./bower_components/jquery.maskedinput/jquery.maskedinput.js",
@@ -20,9 +23,6 @@
       "exports": "nouislider",
       "depends": [ "jquery:jQuery" ]
     }
-  },
-  "browserify": {
-    "transform": [ "browserify-shim" ]
   },
   "dependencies": {
     "jquery": "^2.1.1"

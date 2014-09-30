@@ -6,4 +6,3 @@
 3. Install gulp's cli - `npm install -g gulp` - might need to `sudo` this
 4. Run `gulp`
 5. `open index.html`
-
