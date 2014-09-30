@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo • Gulp-Browserify-Bower-jQuery</title>
+    <link rel="stylesheet" href="dist/all.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Can browserify gulp bowered jquery plugins?</h1>
+            <h2 id="affirmative" class="results">Let's find out</h2>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="tray">
+                <label for="nouislider">This range slider was brought to you by <a href="http://refreshless.com/nouislider/">noUiSlider</a></label>
+                <div id="nouislider"></div>
+                <small>nuffem</small>
+                <output>0% slid</output>
+            </div>
+            <div class="tray">
+                <label for="zip">And thanks to <a href="http://digitalbush.com/projects/masked-input-plugin/">maskedinput</a> you don't have to phormat your (US) phone number
+                    <input type="tel" id="zip" placeholder="I can has yo numba?">
+                </label>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <h3>This took a lot of tinkering</h3>
+            <p>If you'd like to get shimmy with Gulp, Browserify, Bower, and<br> some jQuery plugins, <a href="http://github.com/krry/demo-gulp-browserify-bower-jquery">check out this page's repo</a>.</p>
+            <p>Made possible by <a href="https://stackoverflow.com/questions/25985916/how-can-i-initialize-a-jquery-plugin-nouislider-included-via-browserify-shim">help from StackOverflow</a></p>
+        </div>
+    </footer>
+    <script src="dist/all.js"></script>
+</body>
+</html>

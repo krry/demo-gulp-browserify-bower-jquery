@@ -1,0 +1,176 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 24px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+body {
+    font-size: 100%;
+    background: brown;
+    color: white;
+    margin: 0;
+}
+
+.container {
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+header,
+footer,
+main {
+    padding: 1em 4em 2em;
+}
+
+header,
+footer {
+    background: white;
+    color: brown;
+}
+
+header h1 {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+header a:hover,
+footer a:hover {
+    color: red;
+}
+
+main {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    font-family: "Anonymous Pro", monospace;
+}
+
+input {
+    font-size: 1em;
+    text-align: center;
+    background: none;
+    display: block;
+    margin: 0.5em auto;
+    max-width: 80%;
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    color: white;
+    border-bottom: 2px dotted;
+}
+
+input:focus {
+    color: yellow;
+}
+
+label, output {
+    text-align: center;
+    color: inherit;
+    width: 100%;
+    margin: 1em auto;
+    display: block;
+}
+
+.hidden {
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+}
+
+.tray {
+    margin: 1em;
+    padding: 1em 3em;
+    border: 2px dashed;
+    /*width: 48%;*/
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 20px;
+    -webkit-transition: border-color 200ms ease;
+    transition: border-color 200ms ease;
+}
+
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+a:hover {
+    color: yellow;
+    border-bottom: 1px solid;
+}
+
+::placeholder,
+input::placeholder {
+    color: white;
+    opacity: 0.5;
+}
+
+.affirmative {
+    background: yellow;
+}
+
+.results {
+    padding: 1em 2em;
+    width: auto;
+    display: inline-block;
+    margin: 0.5em auto -2em;
+}
+
+.noUi-connect {
+    background-color: yellow;
+    border-color: brown;
+}
+
+.noUi-horizontal .noUi-handle {
+    border-color: brown;
+    height: 54px;
+    width: 88px;
+    line-height: 48px;
+    box-shadow: 0 0 12px 6px yellow;
+    left: -44px;
+}
+
+.noUi-handle:before,
+.noUi-handle:after {
+    background: none;
+}
+
+.noUi-handle:before {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: brown;
+    content: "ಠ‿ಠ";
+    top: 0; left: 0;
+    font-weight: bolder;
+}
+
+.noUi-horizontal {
+    height: 44px;
+}
+
+@media screen and (max-width: 44em) {
+    body {
+        /*padding: 1em;*/
+    }
+    header, main, footer {
+        padding: 1em .5em;
+    }
+    .tray {
+        margin: 1em;
+    }
+}

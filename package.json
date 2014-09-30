@@ -1,0 +1,36 @@
+{
+  "name": "gulp-test",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git"
+  },
+  "engines": {
+    "node": "0.11.x"
+  },
+  "browser": {
+    "maskedinput": "./bower_components/jquery.maskedinput/jquery.maskedinput.js",
+    "nouislider": "./bower_components/nouislider/distribute/jquery.nouislider.all.js"
+  },
+  "browserify-shim": {
+    "maskedinput": {
+      "exports": "maskedinput",
+      "depends": [ "jquery:jQuery" ]
+    },
+    "nouislider": {
+      "exports": "nouislider",
+      "depends": [ "jquery:jQuery" ]
+    }
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
+  "dependencies": {
+    "jquery": "^2.1.1"
+  },
+  "devDependencies": {
+    "browserify": "^5.11.0",
+    "browserify-shim": "^3.6.0",
+    "gulp": "^3.7.0",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}
