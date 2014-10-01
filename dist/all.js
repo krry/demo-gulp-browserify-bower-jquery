@@ -1,37 +1,90 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var $ = require('jquery')
 var maskedinput = require('maskedinput')
+var nouislider = require('nouislider')
+var slider = $('#nouislider')
+var ded  = "ded"
+
 
 String.prototype.repeat = function(num) {
   return new Array(num+1).join(this);
 }
 
-function maskInputs() {
-  var maskmo = $('input#dob')
-  maskmo.mask('99/99/9999', {
-    placeholder: '_'
-  })
-  var maskmo = $('input#tel')
-  maskmo.mask('(999) 999-9999', {
-    placeholder: '_'
-  })
-  $('#dob').focus(function(){
-    setTimeout(function(){
-      $('#tel').show()
-    }, 500)
-  })
-  $('#tel').focus(function(){
-    setTimeout(function(){
-      $('footer').show()
-    }, 500)
+function loadItIn(){
+  $('#find-out').addClass('in')
+}
+
+function loadSuspense(){
+  setTimeout(function(){
+    if (selfQuasiSemiHalfPartPseudo === true) {
+      veryNextStep()
+    }
+  }, 3500)
+}
+
+function goToVeryNext(){
+  $('#next-step').on('click', function(){
+    veryNextStep()
   })
 }
 
-maskInputs()
+function veryNextStep() {
+  $('body > header').addClass('introd')
+  $('#slider-tray').addClass('in')
+}
 
-var nouislider = require('nouislider')
-var slider = $('#nouislider')
-var ded  = "ded"
+function stealSouls() {
+  $('#steal').on('click', function(){
+    $('#resolve-tray').addClass('in')
+  })
+}
+
+
+function maskInputs() {
+  var zip = $('input#zip')
+  var tel = $('input#tel')
+  var dob = $('input#dob')
+  var ssn = $('input#ssn')
+  var inp = $('#mask-tray input')
+
+  zip.mask('99999', {
+    placeholder: '@'
+  }).data('last', '@')
+  tel.mask('(999) 999-9999', {
+    placeholder: '_'
+  }).data('last', '_')
+  dob.mask('99/99/9999', {
+    placeholder: '•'
+  }).data('last', '•')
+  ssn.mask('999-99-9999', {
+    placeholder: '*'
+  }).data('last', '*')
+
+  inp.on('keyup', function(){
+    var $this = $(this)
+    // if ($this.count) {
+    //   $this.count = 1
+    // } else {
+    //   $this.count++
+    // }
+    advanceFocus($this.val(), $this.data('places'), $this.next())
+  })
+}
+
+
+function advanceFocus(val, last, targ) {
+  console.log('fart')
+  console.log('val')
+  console.log(val)
+  console.log('last')
+  console.log(last)
+  console.log('targ')
+  console.log(targ)
+
+  if (val.slice(-1) !== last) {
+    return targ.focus()
+  }
+}
 
 function initSlider() {
   slider.next('small').hide()
@@ -58,11 +111,16 @@ function initSlider() {
       slidded()
     },
     set: function(){
-      if (Number( slider.val() ) > 1) {
-        $('#affirmative').text('Yurps McGurps!').addClass('affirmative')
-      }
       $('.slider-tray').css('border-color', 'white')
-      setTimeout(function(){$('#mask-tray').show()}, 500)
+
+      setTimeout(function(){
+        $('#slider-credit').addClass('in')
+      }, 400)
+
+
+      setTimeout(function(){
+        $('#mask-tray').addClass('in')
+      }, 4000)
     }
   })
 }
@@ -74,7 +132,10 @@ function slidded() {
 }
 
 initSlider()
-
+maskInputs()
+stealSouls()
+loadItIn()
+goToVeryNext()
 },{"jquery":4,"maskedinput":2,"nouislider":3}],2:[function(require,module,exports){
 (function (global){
 

@@ -2,40 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Can Gulp Browserify Shim Bower jQuery Plugins?</title>
+    <title>Can Gulp &amp; Browserify Shim Bowered jQuery Plugins?</title>
     <link rel="stylesheet" href="dist/all.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Can Gulp Browserify Shim Bower jQuery Plugins?<span id="affirmative" class="results"></span></h1>
+        <div class="container narrow">
+            <h1>Can <a href="http://gulpjs.com/">Gulp</a> &amp; Browserify Shim Bowered jQuery Plugins?<span id="affirmative" class="results"></span></h1>
+            <h3 id="find-out" class="reveal from-right late">
+                <button id="next-step" class="on-dark">Let's find out</button>
+            </h3>
+
         </div>
     </header>
     <main>
         <div class="container">
-            <div id="slider-tray" class="tray">
+            <div id="slider-tray" class="tray reveal">
                 <!-- TODO: explore whether CSS pseudo-classes can create/use indices for nested elements of otherwise ordered lists -->
                 <div class="corner">1</div>
+                <h2>Meet <b>Bearface</b>!</h2>
                 <div id="nouislider"></div>
                 <small>nuffem</small>
+                <p><b>Bearface</b> is brought to you by the surly characters at U+1D54 and U+1D25.</p>
                 <output>
-                    <span class="left">Get</span>
-                    <span class="right">slidded</span>
+                    <span class="left"></span>
+                    <span class="right"></span>
                 </output>
-                <label for="nouislider">This slider was brought to you by <a href="http://refreshless.com/nouislider/">noUiSlider</a> via jQuery.<br>Bearface because brown.</label>
+                <p id="slider-credit" for="nouislider" class="reveal">This oh-so-touchable, browser-agnostic range input was manifested by a Bowered <a href="http://refreshless.com/nouislider/">noUiSlider</a>&mdash;thanks, Léon!&mdash;which grips the silvery pelt of the jQuery that has vaulted into its Browserified dependencies via Gulp.</p>
             </div>
-            <div id="mask-tray" class="tray none">
+            <div id="mask-tray" class="tray reveal">
                 <div class="corner">2</div>
-                <label for="zip">And thanks to <a href="http://digitalbush.com/projects/masked-input-plugin/">maskedinput</a>, you don't have to phormat
-                    <input type="tel" id="dob" placeholder="I can has yr dob?">
-                    <input type="tel" id="tel" class="none" placeholder="I can has yr tel?">
+                <p>And thanks to <a href="http://digitalbush.com/projects/masked-input-plugin/">maskedinput</a> (and <b>Bearface</b>), you may surrender yr:</p>
+                <label for="zip" class="float">
+                    <span>ZIP</span>
+                    <input type="tel" id="zip">
                 </label>
+                <label for="tel" class="float">
+                    <span>TEL</span>
+                    <input type="tel" id="tel">
+                </label>
+                <label for="dob" class="float">
+                    <span>DOB</span>
+                    <input type="tel" id="dob">
+                </label>
+                <label for="ssn" class="float">
+                    <span>SSN</span>
+                    <input type="tel" id="ssn">
+                </label>
+                <button id="steal">Please don't steal my soul</button>
+            </div>
+            <div id="resolve-tray" class="tray reveal">
+                <h2>So can it? <small>see above</small></h2>
+                <button>Of course you can shimmy shake</button>
+                <button>Why do I have to go to the bathroom?</button>
             </div>
         </div>
     </main>
-    <footer class="none">
+    <footer class="reveal">
         <div class="container narrow">
-            <h3>Nice demo of squat. Where's the nectar?</h3>
+            <h3>Nice demo of jack squat. Where's the nectar?</h3>
             <p>If you're looking to shim jQuery plugins into a luxurious Pooh-niversal build (like this) using Gulp, Browserify, Bower, <a href="http://github.com/krry/demo-gulp-browserify-bower-jquery">check out this demo's repo</a>.</p>
             <p>Enabled by <a href="https://stackoverflow.com/questions/25985916/how-can-i-initialize-a-jquery-plugin-nouislider-included-via-browserify-shim">help from StackOverflow</a></p>
             <p class="tiny">Made with ⊙﹏⊙ by <a class="scary-hover" href="//krry.me">⊙﹏⊙</a></p>

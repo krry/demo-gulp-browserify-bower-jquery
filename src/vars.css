@@ -1,5 +1,6 @@
 :root {
-  --brown: hsl(12, 75%, 10%);
+  --brown: hsl(20, 75%, 12.5%);
   --yellow: hsl(56, 80%, 68%);
   --white: hsla(0, 0%, 100%, 0.9);
+  --red: hsl(360, 69%);
 }

@@ -166,18 +166,18 @@ html {
 
 body {
   font-size: 100%;
-  background: hsl(12, 75%, 10%);
+  background: hsl(20, 75%, 12.5%);
   color: hsla(0, 0%, 100%, 0.9);
   margin: 0;
 }
 
 .container {
-  max-width: 60em;
+  max-width: 45rem;
   margin: 0 auto;
 }
 
 .container.narrow {
-  max-width: 30em;
+  max-width: 36em;
 }
 
 header,
@@ -189,7 +189,11 @@ main {
 header,
 footer {
   background: hsla(0, 0%, 100%, 0.9);
-  color: hsl(12, 75%, 10%);
+  color: hsl(20, 75%, 12.5%);
+}
+
+header {
+  padding: 33vh 0 44vh;
 }
 
 header h1 {
@@ -197,13 +201,16 @@ header h1 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
-  text-align: left;
-  line-height: 1.2;
+  /*line-height: 1.2;*/
+}
+
+.introd {
+  padding: 1em 4em 2em;
 }
 
 header a:hover,
 footer a:hover {
-  color: red;
+  /*color: var(--red);*/
 }
 
 main {
@@ -214,53 +221,68 @@ main {
 h1,
 h2,
 h3 {
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-family: "Anonymous Pro", "Courier New", monospace;
 }
 
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+a:hover {
+  color: hsl(56, 80%, 68%);
+  border-bottom: 1px solid;
+}
+
 input {
-  font-size: 1.5em;
-  text-align: center;
-  background: none;
+  font-size: 1.25em;
+  width: 100%;
+  text-align: left;
   display: block;
-  margin: 1.5em auto;
+  margin: 0 auto;
   padding: .125em .25em;
-  max-width: 80%;
+  border: 2px dotted transparent;
+  outline: none;
   -webkit-appearance: none;
   appearance: none;
+  background: hsla(0, 0%, 100%, 0.9);
+  color: hsl(20, 75%, 12.5%);
   font-family: inherit;
-  border: none;
-  outline: none;
-  color: hsla(0, 0%, 100%, 0.9);
-  border: 2px dotted transparent;
-}
-
-input:hover ::-webkit-input-placeholder {
-  opacity: 1;
-}
-
-input:hover ::-moz-placeholder {
-  opacity: 1;
-}
-
-input:hover :-ms-input-placeholder {
-  opacity: 1;
-}
-
-input:hover ::placeholder {
-  opacity: 1;
 }
 
 input:focus {
-  color: hsl(56, 80%, 68%);
+  outline: none;
+  border-color: hsl(56, 80%, 68%);
 }
 
-input+small {
+input + small {
   font-size: .5em;
   margin-top: -1em;
 }
 
-label,
+label {
+  max-width: 50%;
+  margin: 0 auto .5em;
+  position: relative;
+  display: block;
+}
+
+label:last-of-type {
+  margin-bottom: 1em;
+}
+
+label span {
+  position: absolute;
+  color: hsl(20, 75%, 12.5%);
+  line-height: 2;
+  text-align: right;
+  right: .5em;
+}
+
 output {
   text-align: center;
   color: inherit;
@@ -299,8 +321,30 @@ output > .right {
   bottom: .75em;
 }
 
-.none {
-  display: none;
+.reveal.reveal {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition-property: all;
+  transition-duration: 400ms;
+  transition-timing-function: ease;
+}
+
+.reveal.late {
+  transition-delay: 1000ms;
+}
+
+.reveal.from-right {
+  -webkit-transform: translate3d(100vw, 0, 0);
+  transform: translate3d(100vw, 0, 0);
+}
+
+.reveal.in {
+  opacity: 1;
+  height: auto;
+  visibility: visible;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .tray {
@@ -311,7 +355,7 @@ output > .right {
   vertical-align: top;
   border-radius: 20px;
   transition: all 222ms ease;
-  box-shadow: inset 0 0 180px 0 transparent;
+  box-shadow: inset 0 0 120px 0 transparent;
 }
 
 .tray:hover {
@@ -319,29 +363,30 @@ output > .right {
   box-shadow: inset 0 0 0 0 hsl(56, 80%, 68%);
 }
 
-.tray:nth-of-type .corner {
-  content: n;
-}
-
 .tray > .corner {
   position: absolute;
-  top: -.3125em;
+  top: -.25em;
   left: 0;
   font-size: 16em;
-  opacity: .2;
-  -webkit-transform: rotate(-30deg);
-  -ms-transform: rotate(-30deg);
-  transform: rotate(-30deg);
+  color: hsla(0, 100%, 100%, 0.2);
+  -webkit-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  transform: rotate(-20deg);
   font-weight: bolder;
 }
 
-.corner-label:before {
+.corner:before {
   content: "#";
+  font-size: 40%;
+  position: absolute;
+  top: 1.25em;
+  left: 0em;
+  /*transform: rotate(-40deg);*/
+  color: hsla(0, 100%, 100%, 0.2);
 }
 
 #slider-tray:hover .noUi-horizontal .noUi-handle,
 #slider-tray:focus .noUi-horizontal .noUi-handle {
-  box-shadow: 0 0 12px 4px hsl(56, 80%, 68%);
   color: hsl(56, 80%, 68%);
 }
 
@@ -350,41 +395,8 @@ output > .right {
   border-color: hsl(56, 80%, 68%);
 }
 
-a,
-a:link,
-a:visited {
-  color: inherit;
-  text-decoration: none;
-  font-weight: bolder;
-}
-
-a:hover {
-  color: hsl(56, 80%, 68%);
-  border-bottom: 1px solid;
-}
-
-::-webkit-input-placeholder {
-  opacity: .7;
-  color: inherit;
-  transition: opacity 222ms;
-}
-
-::-moz-placeholder {
-  opacity: .7;
-  color: inherit;
-  transition: opacity 222ms;
-}
-
-:-ms-input-placeholder {
-  opacity: .7;
-  color: inherit;
-  transition: opacity 222ms;
-}
-
-::placeholder {
-  opacity: .7;
-  color: inherit;
-  transition: opacity 222ms;
+#slider-tray .noUi-horizontal:hover .noUi-handle {
+  box-shadow: 0 0 12px 4px hsl(56, 80%, 68%);
 }
 
 .results {
@@ -396,21 +408,59 @@ a:hover {
 .affirmative {
   background: hsl(56, 80%, 68%);
   padding: 0 .25em;
-  border-color: hsl(12, 75%, 10%);
+  border-color: hsl(20, 75%, 12.5%);
 }
 
-.noUi-horizontal .noUi-handle {
-  box-shadow: 0 0 0 0 transparent;
-  transition: box-shadow 222ms ease;
+b {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+button {
+  font-size: inherit;
+  font-family: inherit;
+  appearance: none;
+  color: hsla(0, 0%, 100%, 0.9);
+  background: transparent;
+  border-style: solid;
+  border-color: hsl(56, 80%, 68%);
+  border-radius: 1.5em/50%;
+  padding: 0 1em;
+  height: 3em;
+  display: inline-block;
+  vertical-align: top;
+  transition: all 250ms ease;
+}
+
+button.on-dark {
+  color: hsl(20, 75%, 12.5%);
+  border-color: hsl(20, 75%, 12.5%);
+  background: hsla(0, 0%, 100%, 0.9);
+}
+
+button:hover {
+  background: hsl(56, 80%, 68%);
+  color: hsl(20, 75%, 12.5%);
+}
+
+button:active {
+  box-shadow: inset 0 0 2px 0 hsl(20, 75%, 12.5%);
+}
+
+button:focus,
+button:active {
+  outline: none;
 }
 
 .noUi-connect {
   background-color: hsl(56, 80%, 68%);
-  border-color: hsl(12, 75%, 10%);
+  border-color: hsl(20, 75%, 12.5%);
 }
 
 .noUi-horizontal .noUi-handle {
-  background-color: hsl(12, 75%, 10%);
+  box-shadow: 0 0 0 0 transparent;
+  border-radius: 20px 20px 25% 25%;
+  background-color: hsl(20, 75%, 12.5%);
   color: hsla(0, 0%, 100%, 0.9);
   height: 54px;
   width: 88px;
@@ -418,9 +468,8 @@ a:hover {
   left: -44px;
   box-shadow: none;
   border: 4px solid;
-  border-radius: 4px;
   color: hsl(56, 80%, 68%);
-  transition: color 222ms ease;
+  transition: box-shadow 222ms ease;
 }
 
 .noUi-handle:before,
@@ -445,14 +494,10 @@ a:hover {
 
 .noUi-background {
   background: hsla(0, 0%, 100%, 0.9);
-  box-shadow: inset 0 0 2px hsl(12, 75%, 10%);
+  box-shadow: inset 0 0 2px hsl(20, 75%, 12.5%);
 }
 
 @media screen and (max-width: 44em) {
-  body {
-    /*padding: 1em;*/
-  }
-
   header,
   main,
   footer {
@@ -461,5 +506,11 @@ a:hover {
 
   .tray {
     margin: 1em;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  label {
+    max-width: 100%;
   }
 }

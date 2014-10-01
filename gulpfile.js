@@ -34,3 +34,4 @@ gulp.task('watch', function(){
 })
 
 gulp.task('default', ['scripts', 'styles', 'watch'])
+`
