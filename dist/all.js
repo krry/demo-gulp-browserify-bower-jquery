@@ -30,12 +30,21 @@ function goToVeryNext(){
 
 function veryNextStep() {
   $('body > header').addClass('introd')
-  $('#slider-tray').addClass('in')
+  $('main, #slider-tray, footer').addClass('in')
 }
 
 function stealSouls() {
   $('#steal').on('click', function(){
     $('#resolve-tray').addClass('in')
+  })
+}
+
+function showResults(){
+  $('.results').on('click', function(){
+    $(this).text($(this).data('result'))
+    setTimeout(function(){
+      $('#code-tray').addClass('in')
+    }, 500)
   })
 }
 
@@ -67,7 +76,7 @@ function maskInputs() {
     // } else {
     //   $this.count++
     // }
-    advanceFocus($this.val(), $this.data('places'), $this.next())
+    advanceFocus($this.val(), $this.data('last'), $this.parents('label').next('label').find('input'))
   })
 }
 
@@ -76,13 +85,14 @@ function advanceFocus(val, last, targ) {
   console.log('fart')
   console.log('val')
   console.log(val)
+  console.log(val.slice(-1))
   console.log('last')
   console.log(last)
   console.log('targ')
   console.log(targ)
 
   if (val.slice(-1) !== last) {
-    return targ.focus()
+    return $(targ).focus()
   }
 }
 
@@ -136,6 +146,7 @@ maskInputs()
 stealSouls()
 loadItIn()
 goToVeryNext()
+showResults()
 },{"jquery":4,"maskedinput":2,"nouislider":3}],2:[function(require,module,exports){
 (function (global){
 

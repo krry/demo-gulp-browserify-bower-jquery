@@ -8,8 +8,7 @@
 html {
     font-size: 24px;
     text-align: center;
-
-    font-family: sans-serif;
+    font-family: var(--sans);
 }
 
 body {
@@ -68,7 +67,7 @@ main {
 
 h1, h2, h3 {
     /*text-transform: uppercase;*/
-    font-family: "Anonymous Pro", "Courier New", monospace;
+    font-family: var(--mono);
 }
 
 a, a:link, a:visited {
@@ -104,7 +103,7 @@ input:focus {
 }
 
 input + small {
-    font-size: .5em;
+    font-size: .375em;
     margin-top: -1em;
 }
 
@@ -197,7 +196,7 @@ output > .right {
     vertical-align: top;
     border-radius: 20px;
     transition: all 222ms ease;
-    box-shadow: inset 0 0 120px 0 transparent;
+    box-shadow: inset 0 0 100% 0 transparent;
 }
 
 .tray:hover {
@@ -239,16 +238,16 @@ output > .right {
     box-shadow: 0 0 12px 4px var(--yellow);
 }
 
-.results {
-    transition: all 222ms ease;
-    border: 2px dotted transparent;
+.affirmative {
     margin: 0 .25em;
+    padding: 0 .25em;
+    transition: all 222ms ease;
+    background: var(--brown);
+    border: 2px dotted var(--yellow);
 }
 
-.affirmative {
-    background: var(--yellow);
-    padding: 0 .25em;
-    border-color: var(--brown);
+#find-out {
+    overflow: visible;
 }
 
 b {
@@ -258,8 +257,12 @@ b {
 
 button {
     font-size: inherit;
-    font-family: inherit;
+    font-family: var(--sans);
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     appearance: none;
+    margin: .5em auto;
     color: var(--white);
     background: transparent;
     border-style: solid;
@@ -269,7 +272,7 @@ button {
     height: 3em;
     display: inline-block;
     vertical-align: top;
-    transition: all 250ms ease;
+    transition: all 100ms ease;
 }
 
 button.on-dark {
@@ -283,12 +286,9 @@ button:hover {
     color: var(--brown);
 }
 
-button:active {
-    box-shadow: inset 0 0 2px 0 var(--brown);
-}
-
 button:focus,
 button:active {
+    box-shadow: inset 0 0 8px 0 var(--brown), 0 0 24px 8px var(--yellow);
     outline: none;
 }
 

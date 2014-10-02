@@ -1,6 +1,7 @@
 var gulp = require('gulp')
 var myth = require('gulp-myth')
 var concat = require('gulp-concat')
+var plumber = require('gulp-plumber')
 var prefix = require('gulp-autoprefixer')
 var browserify = require('browserify')
 var stream = require('vinyl-source-stream')
@@ -14,6 +15,7 @@ var styles = [
 gulp.task('scripts', function(){
   return browserify(scripts)
         .bundle()
+        .pipe(plumber())
         .pipe(stream('all.js'))
         .pipe(gulp.dest('./dist'))
 })
@@ -21,6 +23,7 @@ gulp.task('scripts', function(){
 gulp.task('styles', function(){
   return gulp.src(styles)
         .pipe(myth())
+        .pipe(plumber())
         .pipe(concat('all.css'))
         .pipe(prefix({
           browsers: ['> 2%']
@@ -34,4 +37,3 @@ gulp.task('watch', function(){
 })
 
 gulp.task('default', ['scripts', 'styles', 'watch'])
-`

@@ -161,7 +161,7 @@
 html {
   font-size: 24px;
   text-align: center;
-  font-family: sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 body {
@@ -222,7 +222,7 @@ h1,
 h2,
 h3 {
   /*text-transform: uppercase;*/
-  font-family: "Anonymous Pro", "Courier New", monospace;
+  font-family: "Source Code Pro", "Consolas", monospace;
 }
 
 a,
@@ -260,7 +260,7 @@ input:focus {
 }
 
 input + small {
-  font-size: .5em;
+  font-size: .375em;
   margin-top: -1em;
 }
 
@@ -355,7 +355,7 @@ output > .right {
   vertical-align: top;
   border-radius: 20px;
   transition: all 222ms ease;
-  box-shadow: inset 0 0 120px 0 transparent;
+  box-shadow: inset 0 0 100% 0 transparent;
 }
 
 .tray:hover {
@@ -399,16 +399,16 @@ output > .right {
   box-shadow: 0 0 12px 4px hsl(56, 80%, 68%);
 }
 
-.results {
-  transition: all 222ms ease;
-  border: 2px dotted transparent;
+.affirmative {
   margin: 0 .25em;
+  padding: 0 .25em;
+  transition: all 222ms ease;
+  background: hsl(20, 75%, 12.5%);
+  border: 2px dotted hsl(56, 80%, 68%);
 }
 
-.affirmative {
-  background: hsl(56, 80%, 68%);
-  padding: 0 .25em;
-  border-color: hsl(20, 75%, 12.5%);
+#find-out {
+  overflow: visible;
 }
 
 b {
@@ -418,8 +418,12 @@ b {
 
 button {
   font-size: inherit;
-  font-family: inherit;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   appearance: none;
+  margin: .5em auto;
   color: hsla(0, 0%, 100%, 0.9);
   background: transparent;
   border-style: solid;
@@ -429,7 +433,7 @@ button {
   height: 3em;
   display: inline-block;
   vertical-align: top;
-  transition: all 250ms ease;
+  transition: all 100ms ease;
 }
 
 button.on-dark {
@@ -443,12 +447,9 @@ button:hover {
   color: hsl(20, 75%, 12.5%);
 }
 
-button:active {
-  box-shadow: inset 0 0 2px 0 hsl(20, 75%, 12.5%);
-}
-
 button:focus,
 button:active {
+  box-shadow: inset 0 0 8px 0 hsl(20, 75%, 12.5%), 0 0 24px 8px hsl(56, 80%, 68%);
   outline: none;
 }
 
