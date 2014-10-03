@@ -529,6 +529,36 @@ dd + dt {
   margin-top: 1em;
 }
 
+@-webkit-keyframes spinning {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spinning {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+.scary .face {
+  transition: all 222ms ease-out;
+  -webkit-animation: spinning 500ms infinite linear;
+  animation: spinning 500ms infinite linear;
+}
+
 @media screen and (max-width: 44em) {
   header,
   main,

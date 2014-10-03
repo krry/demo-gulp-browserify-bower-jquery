@@ -370,6 +370,16 @@ dd + dt {
     margin-top: 1em;
 }
 
+@keyframes spinning {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+.scary .face {
+    transition: all 222ms ease-out;
+    animation: spinning 500ms infinite linear;
+}
+
 @media screen and (max-width: 44em) {
     header, main, footer {
         padding: 1em .5em;
