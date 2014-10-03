@@ -40,7 +40,7 @@ function stealSouls() {
 
 function showResults(){
   $('.results').on('click', function(){
-    $(this).text($(this).data('result'))
+    $('#result').text($(this).data('result'))
     setTimeout(function(){
       $('#code-tray').addClass('in')
     }, 500)
@@ -70,28 +70,17 @@ function maskInputs() {
 
   inp.on('keyup', function(){
     var $this = $(this)
-    // if ($this.count) {
-    //   $this.count = 1
-    // } else {
-    //   $this.count++
-    // }
-    advanceFocus($this.val(), $this.data('last'), $this.parents('label').next('label').find('input'))
+    advanceFocus($this)
   })
 }
 
 
-function advanceFocus(val, last, targ) {
-  console.log('fart')
-  console.log('val')
-  console.log(val)
-  console.log(val.slice(-1))
-  console.log('last')
-  console.log(last)
-  console.log('targ')
-  console.log(targ)
-
+function advanceFocus(el) {
+  var val = el.val()
+  var last = el.data('last')
+  var target = el.parents('label').next('label').find('input')
   if (val.slice(-1) !== last) {
-    return $(targ).focus()
+    return $(target).focus()
   }
 }
 

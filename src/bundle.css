@@ -48,7 +48,6 @@ header h1 {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0;
-    /*line-height: 1.2;*/
 }
 
 .introd {
@@ -57,7 +56,7 @@ header h1 {
 
 header a:hover,
 footer a:hover {
-    /*color: var(--red);*/
+    color: var(--red);
 }
 
 main {
@@ -66,8 +65,13 @@ main {
 }
 
 h1, h2, h3 {
-    /*text-transform: uppercase;*/
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-family: var(--mono);
+}
+
+p {
+    text-align: left;
 }
 
 a, a:link, a:visited {
@@ -192,16 +196,16 @@ output > .right {
     position: relative;
     margin: 1em;
     padding: 1em 3em;
-    border: 2px dashed;
+    border: 1px solid transparent;
     vertical-align: top;
     border-radius: 20px;
     transition: all 222ms ease;
-    box-shadow: inset 0 0 100% 0 transparent;
+    box-shadow: 0 0 400px 0 transparent;
 }
 
 .tray:hover {
     border-color: var(--yellow);
-    box-shadow: inset 0 0 0 0 var(--yellow);
+    box-shadow: 0 0 0 0 var(--yellow);
 }
 
 .tray > .corner {
@@ -214,6 +218,11 @@ output > .right {
     font-weight: bolder;
 }
 
+footer .tray:hover {
+    border-color: var(--brown);
+    box-shadow: 0 0 0 0 var(--brown);
+}
+
 .corner:before {
     content: "#";
     font-size: 40%;
@@ -224,30 +233,12 @@ output > .right {
     color: hsla(0, 100%, 100%, 0.2);
 }
 
-#slider-tray:hover .noUi-horizontal .noUi-handle,
-#slider-tray:focus .noUi-horizontal .noUi-handle {
-    color: var(--yellow);
-}
-
-#mask-tray:hover input,
-#mask-tray:focus input {
-    border-color: var(--yellow);
-}
-
-#slider-tray .noUi-horizontal:hover .noUi-handle {
-    box-shadow: 0 0 12px 4px var(--yellow);
-}
-
 .affirmative {
     margin: 0 .25em;
     padding: 0 .25em;
     transition: all 222ms ease;
     background: var(--brown);
     border: 2px dotted var(--yellow);
-}
-
-#find-out {
-    overflow: visible;
 }
 
 b {
@@ -286,10 +277,30 @@ button:hover {
     color: var(--brown);
 }
 
-button:focus,
 button:active {
     box-shadow: inset 0 0 8px 0 var(--brown), 0 0 24px 8px var(--yellow);
+}
+
+button:focus {
     outline: none;
+}
+
+#slider-tray:hover .noUi-horizontal .noUi-handle,
+#slider-tray:focus .noUi-horizontal .noUi-handle {
+    color: var(--yellow);
+}
+
+#mask-tray:hover input,
+#mask-tray:focus input {
+    border-color: var(--yellow);
+}
+
+#slider-tray .noUi-horizontal:hover .noUi-handle {
+    box-shadow: 0 0 12px 4px var(--yellow);
+}
+
+#find-out {
+    overflow: visible;
 }
 
 .noUi-horizontal .noUi-handle {
@@ -337,6 +348,26 @@ button:active {
 .noUi-background {
     background: var(--white);
     box-shadow: inset 0 0 2px var(--brown);
+}
+
+hr {
+    border: none;
+    background: none;
+    border-top: 1px solid;
+    color: inherit;
+    width: 90%;
+}
+
+dl {
+    text-align: left;
+}
+
+dt {
+    font-weight: bolder;
+}
+
+dd + dt {
+    margin-top: 1em;
 }
 
 @media screen and (max-width: 44em) {
